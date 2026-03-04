@@ -2,8 +2,8 @@ title: Harini
 description: Thoughts on living with intention.
 author: Harini
 
-url: "https://harini.lol"
-baseurl: ""
+url: "https://Harini-UW.github.io"
+baseurl: "/harini.lol"
 
 # Build settings
 markdown: kramdown
