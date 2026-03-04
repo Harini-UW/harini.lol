@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+
+<!-- ===== HERO: Typing Animation ===== -->
+<section class="hero">
+  <p class="hero__text">
+    Hi! I am Harini! I am 19 and&nbsp;<span class="typing-span" id="typing-text"></span><span class="cursor" id="typing-cursor" aria-hidden="true"></span>
+  </p>
+</section>
+
+<!-- ===== LATEST NEWSLETTER ===== -->
+{% assign latest = site.posts.first %}
+{% if latest %}
+<section class="latest-post">
+  <div class="latest-post__header">
+    <p class="latest-post__label">Latest newsletter</p>
+    <h2 class="latest-post__title">
+      <a href="{{ latest.url | relative_url }}" class="latest-post__title-link">{{ latest.title }}</a>
+    </h2>
+    <time class="latest-post__date" datetime="{{ latest.date | date_to_xmlschema }}">
+      {{ latest.date | date: "%B %Y" }}
+    </time>
+  </div>
+
+  <div class="post-content">
+    {{ latest.content }}
+  </div>
+</section>
+{% endif %}

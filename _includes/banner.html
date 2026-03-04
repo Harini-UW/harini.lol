@@ -1,0 +1,78 @@
+<section class="banner-section" aria-label="Photo gallery">
+  <div class="banner-track-wrapper" id="bannerWrapper">
+    <div class="banner-track" id="bannerTrack">
+      {% for image in site.data.banner %}
+      <div class="banner-item">
+        <img
+          src="{{ image.src | relative_url }}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+          draggable="false"
+        >
+      </div>
+      {% endfor %}
+      <!-- Duplicate set for seamless infinite loop -->
+      {% for image in site.data.banner %}
+      <div class="banner-item" aria-hidden="true">
+        <img
+          src="{{ image.src | relative_url }}"
+          alt=""
+          loading="lazy"
+          draggable="false"
+        >
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Allow click-drag to scroll the banner manually
+  (function () {
+    const wrapper = document.getElementById('bannerWrapper');
+    const track   = document.getElementById('bannerTrack');
+    if (!wrapper || !track) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    wrapper.addEventListener('mousedown', function (e) {
+      isDragging = true;
+      wrapper.classList.add('is-dragging');
+      startX = e.pageX - wrapper.offsetLeft;
+      scrollLeft = wrapper.scrollLeft;
+      track.style.animationPlayState = 'paused';
+    });
+
+    document.addEventListener('mouseup', function () {
+      if (!isDragging) return;
+      isDragging = false;
+      wrapper.classList.remove('is-dragging');
+      track.style.animationPlayState = 'running';
+    });
+
+    wrapper.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - wrapper.offsetLeft;
+      wrapper.scrollLeft = scrollLeft - (x - startX);
+    });
+
+    // Touch support
+    wrapper.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].pageX - wrapper.offsetLeft;
+      scrollLeft = wrapper.scrollLeft;
+      track.style.animationPlayState = 'paused';
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', function () {
+      track.style.animationPlayState = 'running';
+    });
+
+    wrapper.addEventListener('touchmove', function (e) {
+      const x = e.touches[0].pageX - wrapper.offsetLeft;
+      wrapper.scrollLeft = scrollLeft - (x - startX);
+    }, { passive: true });
+  })();
+</script>

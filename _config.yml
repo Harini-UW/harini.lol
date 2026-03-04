@@ -1,0 +1,39 @@
+title: Harini
+description: Thoughts on living with intention.
+author: Harini
+
+url: "https://harini.lol"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /newsletter/:year/:month/:title/
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Plugins (all supported by GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - README.md

@@ -1,0 +1,26 @@
+---
+layout: default
+title: Past Newsletters
+---
+
+<section class="archive-page">
+  <h1 class="archive-page__title">Past Newsletters</h1>
+  <p class="archive-page__subtitle">Every month, a note from me to you.</p>
+
+  {% if site.posts.size > 0 %}
+  <ul class="newsletter-list">
+    {% for post in site.posts %}
+    <li class="newsletter-item">
+      <a href="{{ post.url | relative_url }}" class="newsletter-item__link">
+        {{ post.title }}
+      </a>
+      <time class="newsletter-item__date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%B %Y" }}
+      </time>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="archive-page__empty">No newsletters yet — check back soon.</p>
+  {% endif %}
+</section>
