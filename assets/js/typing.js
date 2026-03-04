@@ -10,9 +10,8 @@
 
   var phrases = [
     "trying not to live on autopilot.",
-    "debugging my own default settings.",
-    "trying to engineer intention into chaos.",
-    "I don't want to say 'that\u2019s just how it is'."
+    "debugging my own defaults.",
+    "engineering intention into chaos.",
   ];
 
   var TYPE_SPEED    = 62;   // ms per character when typing
