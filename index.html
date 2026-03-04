@@ -19,9 +19,6 @@ title: Home
     <h2 class="latest-post__title">
       <a href="{{ latest.url | relative_url }}" class="latest-post__title-link">{{ latest.title }}</a>
     </h2>
-    <time class="latest-post__date" datetime="{{ latest.date | date_to_xmlschema }}">
-      {{ latest.date | date: "%B %Y" }}
-    </time>
   </div>
 
   <div class="post-content">
