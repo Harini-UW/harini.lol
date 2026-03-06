@@ -514,8 +514,18 @@ a {
    Responsive
    ============================================================= */
 @media (max-width: 680px) {
+  .site-header {
+    padding: 0.9rem var(--space-sm);
+  }
+
   .hero {
     padding: var(--space-lg) var(--space-sm) var(--space-md);
+  }
+
+  .hero__text {
+    white-space: normal;
+    font-size: 1.2rem;
+    text-align: left;
   }
 
   .latest-post,
@@ -523,6 +533,10 @@ a {
   .post-page {
     padding-left: var(--space-sm);
     padding-right: var(--space-sm);
+  }
+
+  .post-content {
+    font-size: 1rem;
   }
 
   .newsletter-item {
