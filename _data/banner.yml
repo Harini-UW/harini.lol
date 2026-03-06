@@ -2,17 +2,17 @@
 # Recommended size: ~600×420px or any landscape ratio.
 # Place images in assets/images/banner/
 
-- src: /assets/images/banner/photo-1.svg
-  alt: A quiet morning
+- src: /assets/images/banner/feb-pic-1.jpeg
+  alt: Photo 1
 
-- src: /assets/images/banner/photo-2.svg
-  alt: Late afternoon light
+- src: /assets/images/banner/feb-pic-2.jpeg
+  alt: Photo 2
 
-- src: /assets/images/banner/photo-3.svg
-  alt: Something green
+- src: /assets/images/banner/feb-pic-3.jpeg
+  alt: Photo 3
 
-- src: /assets/images/banner/photo-4.svg
-  alt: Blue hour
+- src: /assets/images/banner/feb-pic-4.jpeg
+  alt: Photo 4
 
-- src: /assets/images/banner/photo-5.svg
-  alt: Golden hour
+- src: /assets/images/banner/feb-pic-5.jpeg
+  alt: Photo 5
