@@ -1,18 +1,53 @@
 <section class="subscribe-section">
   <p class="subscribe-section__label">Stay in the loop</p>
-  <form
-    action="https://buttondown.com/api/emails/embed-subscribe/harini"
-    method="post"
-    class="subscribe-form"
-    referrerpolicy="unsafe-url"
-  >
+  <form class="subscribe-form" id="subscribe-form">
     <div class="subscribe-form__row">
       <label for="bd-email" class="sr-only">Enter your email</label>
       <input type="email" name="email" id="bd-email" class="subscribe-form__input" placeholder="your@email.com" required />
       <button type="submit" class="subscribe-form__btn">Subscribe</button>
     </div>
-    <p class="subscribe-form__credit">
-      <a href="https://buttondown.com/refer/harini" target="_blank" rel="noopener">Powered by Buttondown</a>
-    </p>
+    <p class="subscribe-form__status" id="subscribe-status" aria-live="polite"></p>
+    <p class="subscribe-form__credit">No spam, unsubscribe anytime.</p>
   </form>
 </section>
+
+<script>
+(function () {
+  var form = document.getElementById('subscribe-form');
+  var status = document.getElementById('subscribe-status');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="email"]').value;
+    var btn = form.querySelector('button[type="submit"]');
+
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+    status.textContent = '';
+
+    fetch('https://script.google.com/macros/s/AKfycby6bMUj6x4EvLAq1U-oEeRRNaxvvAV5Eguiw1lhEsEvFGzQVEOhfcLc9eKQGlP1hNMV8w/exec', {
+      method: 'POST',
+      body: new URLSearchParams({ email: email })
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.result === 'success') {
+        status.textContent = 'You\'re in!';
+        status.style.color = 'var(--color-accent)';
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Something went wrong.');
+      }
+    })
+    .catch(function () {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.style.color = 'var(--color-text-muted)';
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    });
+  });
+})();
+</script>

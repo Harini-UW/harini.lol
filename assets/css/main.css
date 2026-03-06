@@ -160,6 +160,10 @@ a {
   white-space: nowrap;
 }
 
+.hero__mobile-break {
+  display: none;
+}
+
 /* Blinking cursor */
 .cursor {
   display: inline-block;
@@ -361,16 +365,21 @@ a {
   color: var(--color-bg);
 }
 
-.subscribe-form__credit {
-  margin-top: 0.6rem;
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
+.subscribe-form__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.subscribe-form__credit a {
+.subscribe-form__status {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+.subscribe-form__credit {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
   color: var(--color-text-muted);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 .sr-only {
@@ -614,6 +623,10 @@ a {
     white-space: normal;
     font-size: 1.2rem;
     text-align: left;
+  }
+
+  .hero__mobile-break {
+    display: inline;
   }
 
   .latest-post,

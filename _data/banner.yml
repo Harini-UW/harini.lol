@@ -2,9 +2,6 @@
 # Recommended size: ~600×420px or any landscape ratio.
 # Place images in assets/images/banner/
 
-- src: /assets/images/banner/feb-pic-1.jpeg
-  alt: Photo 1
-
 - src: /assets/images/banner/feb-pic-2.jpeg
   alt: Photo 2
 
