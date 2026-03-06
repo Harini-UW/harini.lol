@@ -18,7 +18,7 @@
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
 
-  --max-width:    720px;
+  --max-width:    calc(720px + 2cm);
   --wide-width:   1100px;
 
   --space-xs:  0.5rem;
@@ -343,7 +343,7 @@ a {
   width: max-content;
   gap: 10px;
   padding: 6px 5px 12px;
-  animation: banner-scroll 50s linear infinite;
+  animation: banner-scroll 30s linear infinite;
   will-change: transform;
 }
 
