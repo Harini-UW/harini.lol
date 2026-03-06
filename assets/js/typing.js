@@ -1,7 +1,7 @@
 /**
  * Typing animation for the homepage hero.
  *
- * Keeps the prefix "Hi! I am Harini! I am 19 and " static,
+ * Keeps the prefix "Hi! I am Harini! I am " static,
  * then loops through phrases — typing each one character by character,
  * waiting, then deleting back to nothing before typing the next.
  */
