@@ -470,6 +470,10 @@ a {
   pointer-events: none;
 }
 
+.banner-item img[src*="presense"] {
+  object-fit: contain;
+}
+
 .banner-item:hover img {
   transform: scale(1.04);
 }
