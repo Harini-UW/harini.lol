@@ -1,7 +1,8 @@
 <section class="banner-section" aria-label="Photo gallery">
   <div class="banner-track-wrapper" id="bannerWrapper">
     <div class="banner-track" id="bannerTrack">
-      {% for image in site.data.banner %}
+      {% assign banner_images = page.images | default: site.data.banner %}
+      {% for image in banner_images %}
       <div class="banner-item">
         <img
           src="{{ image.src | relative_url }}"
@@ -12,7 +13,7 @@
       </div>
       {% endfor %}
       <!-- Duplicate set for seamless infinite loop -->
-      {% for image in site.data.banner %}
+      {% for image in banner_images %}
       <div class="banner-item" aria-hidden="true">
         <img
           src="{{ image.src | relative_url }}"

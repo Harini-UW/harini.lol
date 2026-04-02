@@ -1,15 +1,14 @@
-# Banner images — replace with your own photos.
+# Default banner images (used on homepage and archive).
 # Recommended size: ~600×420px or any landscape ratio.
-# Place images in assets/images/banner/
 
-- src: /assets/images/banner/feb-pic-2.jpeg
+- src: /assets/images/february/feb-pic-2.jpeg
   alt: Photo 2
 
-- src: /assets/images/banner/feb-pic-3.jpeg
+- src: /assets/images/february/feb-pic-3.jpeg
   alt: Photo 3
 
-- src: /assets/images/banner/feb-pic-4.jpeg
+- src: /assets/images/february/feb-pic-4.jpeg
   alt: Photo 4
 
-- src: /assets/images/banner/feb-pic-5.jpeg
+- src: /assets/images/february/feb-pic-5.jpeg
   alt: Photo 5
