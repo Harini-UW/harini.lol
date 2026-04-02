@@ -1,7 +1,7 @@
 <section class="banner-section" aria-label="Photo gallery">
   <div class="banner-track-wrapper" id="bannerWrapper">
     <div class="banner-track" id="bannerTrack">
-      {% assign banner_images = page.images | default: site.data.banner %}
+      {% assign banner_images = page.images | default: site.posts.first.images %}
       {% for image in banner_images %}
       <div class="banner-item">
         <img
