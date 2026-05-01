@@ -617,6 +617,37 @@ a {
   color: var(--color-text-muted);
 }
 
+.post-photos {
+  display: flex;
+  gap: 12px;
+  margin-bottom: var(--space-lg);
+}
+
+.post-photo {
+  flex: 1;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-bg-subtle);
+}
+
+.post-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .post-photos {
+    flex-direction: column;
+  }
+
+  .post-photo {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* =============================================================
    Footer
    ============================================================= */
