@@ -287,6 +287,24 @@ a {
   padding-left: 1.5rem;
 }
 
+.post-content ul.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-content ul.checklist li {
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.post-content ul.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 .post-content li + li {
   margin-top: 0.35rem;
 }
